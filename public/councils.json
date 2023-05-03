@@ -1,0 +1,52 @@
+{
+    "dorset": {
+        "slug": "dorset",
+        "name": "Dorset",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Dorset.geojson"}
+        ]
+    },
+    "wigan": { 
+        "slug": "wigan",
+        "name": "Wigan",
+        "boundaries": [
+            {"tag": "Present", "year": "2023", "slug": "present", "url": "/boundary/wards_Wigan_2023.geojson"},
+            {"tag": "Old", "year": "2022", "slug": "2022", "url": "/boundary/wards_Wigan.geojson"}
+        ]
+    },
+    "north-east-lincolnshire": {
+        "slug": "north-east-lincolnshire",
+        "name": "North East Lincolnshire",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_North_East_Lincolnshire.geojson"}
+        ]
+    },
+    "bounemouth-christchurch-poole": {
+        "slug": "bounemouth-christchurch-poole",
+        "name": "Bournemouth, Christchurch and Poole",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Bournemouth_Christchurch_and_Poole.geojson"}
+        ]
+    },
+    "north-somerset": {
+        "slug": "north-somerset",
+        "name": "North Somerset",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_North_Somerset.geojson"}
+        ]
+    },
+    "stockport": {
+        "slug": "stockport",
+        "name": "Stockport",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Stockport.geojson"}
+        ]
+    },
+    "wrexham": {
+        "slug": "wrexham",
+        "name": "Wrexham",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Wrexham.geojson"}
+        ]
+    }
+}
