@@ -1,7 +1,8 @@
 import { reactive, shallowReactive } from "vue";
+import { getJSON, config } from "./api";
 
 export const councils = reactive({
-
+    
     // key of the current council the app is looking at
     currentCouncil: {
         name: "",
@@ -12,21 +13,16 @@ export const councils = reactive({
     councilListing: {},
 
     // GeoJSON boundaries of the council the app is looking at
-    councilBoundaries: shallowReactive({ data: {} }),
+    councilBoundaries: shallowReactive({ data: {}, error: false }),
 
     // Load the listing of councils from the data source
     loadCouncilListing() {
-        let req = new Request("/councils.json");
-        
-        fetch(req, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" }
-        })
-        .then(res => res.json())
-        .then(resp => {
-            this.councilListing = resp;
-        })
-        .catch(console.error);
+        getJSON(config.listing_path).then(data => {
+            this.councilListing = data;
+        }).catch(e => {
+            console.error("Server Error:", e);
+            alert("Error loading listing of council boundary data. Please refresh to try again.")
+        });
     },
 
     // Load the council boundaries from the data source
@@ -41,13 +37,14 @@ export const councils = reactive({
             throw new Error("Council boundary not found");
         }
 
-        let req = new Request(boundFile.url);
-        fetch(req, { method: "GET", headers: { "Content-Type": "application/json" }})
-        .then(r => r.json())
-        .then(resp => {
-            console.log(resp);
-            this.councilBoundaries.data = resp;
-        }).catch(console.error);
+        getJSON(config.api_base + boundFile.url).then(data => {
+            this.councilBoundaries.data = data;
+            this.councilBoundaries.error = false;
+        }).catch(e => {
+            console.error("Sever Error:", e);
+            alert(`Server Error Loading Boundaries: ${e}. Perhaps try again later.`)
+            this.councilBoundaries.error = true;
+        });
     },
 
     isCouncilLoaded() {
