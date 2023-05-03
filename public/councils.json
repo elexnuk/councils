@@ -48,5 +48,19 @@
         "boundaries": [
             {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Wrexham.geojson"}
         ]
+    },
+    "sheffield": {
+        "slug": "sheffield",
+        "name": "Sheffield",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Sheffield.geojson"}
+        ]
+    },
+    "walsall": {
+        "slug": "walsall",
+        "name": "Walsall",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "/boundary/wards_Walsall.geojson"}
+        ]
     }
 }
