@@ -68,7 +68,7 @@ export default {
 		const key = url.pathname.slice(1);
 
 		if (!authorizeRequest(request, env, key)) {
-			return new Response("Forbidden", { status: 403 });
+			return corsHeaders(new Response("Forbidden", { status: 403 }), request.headers.get("Origin"));
 		}
 
 		switch (request.method) {
@@ -81,13 +81,13 @@ export default {
 			case 'GET':
 				// Check fetch working with origin response
 				if (key == "") {
-					return new Response("Success. Worker Responding");
+					return corsHeaders(new Response("Success. Worker Responding"), request.headers.get("Origin"));
 				}
 
 				// Actually get the object and return it
 				const object = await env.boundaryBinding.get(key);
 				if (object === null) {
-					return new Response("Not Found", { status: 404 });
+					return corsHeaders(new Response("Not Found", { status: 404 }), request.headers.get("Origin"));
 				}
 				const headers = new Headers();
 				object.writeHttpMetadata(headers);

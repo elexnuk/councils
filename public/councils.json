@@ -3,8 +3,7 @@
         "slug": "uk",
         "name": "United Kingdom",
         "boundaries": [
-            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "gb_constituencies.geojson"},
-            {"tag": "Wards", "year": "2022", "slug": "wards", "url": "wards_gb.geojson"}
+            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "constituencies_gb.geojson"}
         ]
     },
     "dorset": {
