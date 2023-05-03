@@ -1,0 +1,11 @@
+name = "boundaries"
+main = "src/index.js"
+compatibility_date = "2023-05-03"
+
+account_id = "ACCOUNT_ID"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "boundaryBinding"
+bucket_name = "BUCKET_NAME"
+preview_bucket_name = "PREVIEW_BUCKET_NAME"
