@@ -1,0 +1,73 @@
+{
+    "uk": {
+        "slug": "uk",
+        "name": "United Kingdom",
+        "boundaries": [
+            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "constituencies_gb.geojson"}
+        ]
+    },
+    "dorset": {
+        "slug": "dorset",
+        "name": "Dorset",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Dorset.geojson"}
+        ]
+    },
+    "wigan": { 
+        "slug": "wigan",
+        "name": "Wigan",
+        "boundaries": [
+            {"tag": "Present", "year": "2023", "slug": "present", "url": "wards_Wigan_2023.geojson"},
+            {"tag": "Old", "year": "2022", "slug": "2022", "url": "wards_Wigan.geojson"}
+        ]
+    },
+    "north-east-lincolnshire": {
+        "slug": "north-east-lincolnshire",
+        "name": "North East Lincolnshire",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_North_East_Lincolnshire.geojson"}
+        ]
+    },
+    "bounemouth-christchurch-poole": {
+        "slug": "bounemouth-christchurch-poole",
+        "name": "Bournemouth, Christchurch and Poole",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Bournemouth_Christchurch_and_Poole.geojson"}
+        ]
+    },
+    "north-somerset": {
+        "slug": "north-somerset",
+        "name": "North Somerset",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_North_Somerset.geojson"}
+        ]
+    },
+    "stockport": {
+        "slug": "stockport",
+        "name": "Stockport",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Stockport.geojson"}
+        ]
+    },
+    "wrexham": {
+        "slug": "wrexham",
+        "name": "Wrexham",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Wrexham.geojson"}
+        ]
+    },
+    "sheffield": {
+        "slug": "sheffield",
+        "name": "Sheffield",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Sheffield.geojson"}
+        ]
+    },
+    "walsall": {
+        "slug": "walsall",
+        "name": "Walsall",
+        "boundaries": [
+            {"tag": "Present", "year": "2022", "slug": "present", "url": "wards_Walsall.geojson"}
+        ]
+    }
+}

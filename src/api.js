@@ -1,5 +1,7 @@
 import { reactive } from "vue";
 
+const config_url = (import.meta.env.DEV) ? "/local.config.json" : "config.json";
+
 const config = reactive({
     api_base: "/",
     listing_path: "/councils.json"
@@ -23,7 +25,8 @@ function getJSON(url) {
 }
 
 function loadConfig() {
-    return getJSON("/config.json").then(data => {
+
+    return getJSON(config_url).then(data => {
         if (data.boundaryBase) {
             config.api_base = data.boundaryBase;
         } else {
