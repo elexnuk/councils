@@ -7,7 +7,7 @@ const height = 600;
 
 const zoom = d3.zoom();
 
-function loadBoundaries(boundaries, mouseover, mousedown) {
+function loadBoundaries(boundaries, options, mouseover, mousedown) {
 
     document.getElementById("d3-svg").innerHTML = "";
 
@@ -23,18 +23,20 @@ function loadBoundaries(boundaries, mouseover, mousedown) {
         .translateExtent([[0, 0], [width, height]])
     );
 
+    // console.log(boundaries);
+
     zoomLayer.attr("transform", "translate(0 0) scale(1)");
     zoomLayer.selectAll("g")
         .data(boundaries.features)
         .enter()
             .append("path")
             .attr("d", geoGenerator)
-            .attr("data-tag", feature => feature.properties.wdcd)
+            .attr("data-tag", feature => feature.properties[options.key])
             .attr("stroke", "#1E293B")
             .attr("stroke-width", "0.05%")
             .attr("stroke-linejoin", "round")
             .attr("fill", feature => {
-                drawState.wardColouring[feature.properties.wdcd] = "#dddddd";
+                drawState.wardColouring[feature.properties[options.key]] = "#dddddd";
                 return "#dddddd";
             })
             .on("mouseover", mouseover)

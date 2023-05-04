@@ -1,6 +1,8 @@
 import { reactive, shallowReactive } from "vue";
 import { getJSON, config } from "./api";
 
+const defaultOptions = { key: "wdcd", name: "wdnm" };
+
 export const councils = reactive({
     
     // key of the current council the app is looking at
@@ -13,7 +15,7 @@ export const councils = reactive({
     councilListing: {},
 
     // GeoJSON boundaries of the council the app is looking at
-    councilBoundaries: shallowReactive({ data: {}, error: false }),
+    councilBoundaries: shallowReactive({ data: {}, error: false, options: defaultOptions }),
 
     // Load the listing of councils from the data source
     loadCouncilListing() {
@@ -44,6 +46,12 @@ export const councils = reactive({
             console.error("Sever Error:", e);
             alert(`Server Error Loading Boundaries: ${e}. Perhaps try again later.`)
             this.councilBoundaries.error = true;
+        }).finally(() => {
+            if (boundFile.options) {
+                this.councilBoundaries.options = boundFile.options;
+            } else {
+                this.councilBoundaries.options = defaultOptions;  
+            }
         });
     },
 

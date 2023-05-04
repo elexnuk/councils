@@ -3,7 +3,17 @@
         "slug": "uk",
         "name": "United Kingdom",
         "boundaries": [
-            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "constituencies_gb.geojson"}
+            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "constituencies_gb.geojson"},
+            {
+                "tag": "Councils", 
+                "year": "2022", 
+                "slug": "councils", 
+                "url": "councils_UK.geojson", 
+                "options": {
+                    "key": "LAD22CD",
+                    "name": "LAD22NM"
+                }
+            }
         ]
     },
     "dorset": {

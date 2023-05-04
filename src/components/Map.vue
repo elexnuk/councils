@@ -23,12 +23,14 @@ watch(councils.councilBoundaries, (value) => {
         return;
     }
 
-    loadBoundaries(councils.councilBoundaries.data, (e, feature) => {
+    let options = councils.councilBoundaries.options;
+
+    loadBoundaries(councils.councilBoundaries.data, options, (e, feature) => {
         // Mouseover
-        focusWardName.value = feature.properties.wdnm;
+        focusWardName.value = feature.properties[options.name];
     }, (e, feature) => {
         // Mousedown
-        drawState.wardColouring[feature.properties.wdcd] = drawState.pen.fill;
+        drawState.wardColouring[feature.properties[options.key]] = drawState.pen.fill;
         e.target.setAttribute("fill", drawState.pen.fill);
     });
 });
