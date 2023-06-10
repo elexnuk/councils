@@ -8,7 +8,7 @@ const hasValidAuthorization = (request, env) => {
 
 // Whitelisted origins
 const allowedOrigins = [
-	"https://council-colouring.pages.dev"
+	"https://councils.elexn.uk"
 ]
 
 // headers for CORS requests
