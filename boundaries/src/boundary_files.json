@@ -1,5 +1,6 @@
 {
     "boundaryFiles": [
+        "councils_UK.geojson",
         "wards_gb.geojson",
         "constituencies_gb.geojson",
         "wards_Aberdeen_City.geojson",
