@@ -20,10 +20,9 @@ let councilListing = computed(() => {
 
 <template>
     
-    <h1 class="text-5xl font-mono font-black text-gradient text-transparent bg-clip-text py-2">
-        <span class="text-3xl">james/</span><br>
-        Council<br>
-        Colouring
+    <h1 class="text-5xl font-mono font-black text-gradient text-transparent bg-clip-text py-2 mt-3">
+        Councils<br>
+        <span class="text-3xl inline-block relative -top-5 font-semibold font-sans italic"><a href="https://elexn.uk/" target="_blank">elexn.uk</a></span><br>
     </h1>
 
     <div class="mt-4 px-4 py-4 w-full border border-slate-700 bg-white shadow-lg rounded-lg">
