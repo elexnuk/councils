@@ -46,7 +46,6 @@ let councilListing = computed(() => {
 
         <Transition name="collapse">
             <div v-show="councilsShown" class="flex flex-row flex-wrap gap-2 justify-start mt-4">
-                <Combobox placeholder="Search for Council..." :values="councilListing" @input="event => councils.setCurrentCouncilName(event.slug)"></Combobox>
                 <div v-if="councils.getCurrentCouncil()"
                 class="w-full italic text-sm text-gray-800"
                 >
@@ -62,7 +61,7 @@ let councilListing = computed(() => {
                     {{ bound.tag }} ({{ bound.year }})
                 </button>
                 <span class=" italic text-sm text-gray-800" v-else>
-                    Please Select a {{ $props.boundaryName }} First!
+                    No Boundaries for {{ $props.boundaryName }} Found.
                 </span>
             </div>
         </Transition>

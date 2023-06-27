@@ -21,6 +21,7 @@ export const drawState = reactive({
         "LD": {"label": "LD",   "fill": "#FAA61A"},
         "Grn": {"label": "Grn",  "fill": "#8dc63f"},
         "PC": {"label": "PC",   "fill": "#005B54"},
+        "SNP": {"label": "SNP",  "fill": "#FDF38E"},
         "TUSC": {"label": "TUSC", "fill": "#EC008C"},
         "Ref": {"label": "Ref",  "fill": "#12B6CF"},
         "UKIP": {"label": "UKIP", "fill": "#6D3177"},

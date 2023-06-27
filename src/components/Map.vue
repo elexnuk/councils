@@ -17,6 +17,10 @@ function exportSVG() {
 
 let focusWardName = ref("");
 
+const props = defineProps({
+    divisionName: String,
+});
+
 watch(councils.councilBoundaries, (value) => {
     console.log("change in council boundaries", value);
     if (councils.councilBoundaries.error) {
@@ -42,7 +46,7 @@ watch(councils.councilBoundaries, (value) => {
 
         <div class="flex flex-row flex-wrap md:flex-nowrap justify-between w-full p-2 px-4 rounded-md text-lg">
             <h4 class="md:text-lg lg:text-xl font-thin py-3 align-middle w-full md:w-auto">
-                Ward: <span class=" font-semibold">{{ focusWardName }}</span>   
+                {{ $props.divisionName }}: <span class=" font-semibold">{{ focusWardName }}</span>   
             </h4>
 
             <div class="border border-slate-400 pl-2 pr-4 py-2 rounded-lg flex-row inline-flex gap-4 font-light w-full md:w-auto">

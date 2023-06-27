@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
-const config_url = (import.meta.env.DEV) ? "/local.config.json" : "config.json";
+const config_url = (import.meta.env.DEV) ? "local.config.json" : "config.json";
 
 const config = reactive({
     api_base: "/",
