@@ -8,6 +8,7 @@ const hasValidAuthorization = (request, env) => {
 
 // Whitelisted origins
 const allowedOrigins = [
+	"https://boundaries.elexn.uk",
 	"https://councils.elexn.uk"
 ]
 
