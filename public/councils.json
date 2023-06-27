@@ -1,9 +1,18 @@
 {
     "parliament": {
         "slug": "parliament",
-        "name": "UK Parliament",
+        "name": "UK",
         "boundaries": [
-            {"tag": "Constituencies", "year": "2010", "slug": "constituencies", "url": "constituencies_gb.geojson"},
+            {
+                "tag": "Constituencies", 
+                "year": "2010", 
+                "slug": "constituencies", 
+                "url": "constituencies_GB.geojson",
+                "options": {
+                    "key": "PCON22CD", 
+                    "name": "PCON22NM"
+                }
+            },
             {
                 "tag": "Councils", 
                 "year": "2022", 

@@ -2,7 +2,7 @@
     "boundaryFiles": [
         "councils_UK.geojson",
         "wards_gb.geojson",
-        "constituencies_gb.geojson",
+        "constituencies_GB.geojson",
         "wards_Aberdeen_City.geojson",
         "wards_Aberdeenshire.geojson",
         "wards_Adur.geojson",
