@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { drawState } from "./draw";
 import { councils } from "./councils";
+import rewind from "@turf/rewind";
 
 const width = 700;
 const height = 600;
@@ -8,6 +9,8 @@ const height = 600;
 const zoom = d3.zoom();
 
 function loadBoundaries(boundaries, options, mouseover, mousedown) {
+
+    boundaries = rewind(boundaries, { reverse: true }); // Ensure boundaries are wound the right way for d3
 
     document.getElementById("d3-svg").innerHTML = "";
 
@@ -19,11 +22,9 @@ function loadBoundaries(boundaries, options, mouseover, mousedown) {
     map.call(
         zoom.on("zoom", e => {
             zoomLayer.attr("transform", e.transform);
-        }).scaleExtent([1, 8])
+        }).scaleExtent([1, 10])
         .translateExtent([[0, 0], [width, height]])
     );
-
-    // console.log(boundaries);
 
     zoomLayer.attr("transform", "translate(0 0) scale(1)");
     zoomLayer.selectAll("g")

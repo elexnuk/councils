@@ -29,6 +29,10 @@ export const drawState = reactive({
         "Oth": {"label": "Oth",  "fill": "#475569"}
     },
 
+    clearPen() {
+        this.pen = {};
+    },
+
     selectPen(label) {
         if (this.defaultPens[label]) {
             this.pen = this.defaultPens[label];
@@ -59,7 +63,7 @@ export const drawState = reactive({
     },
 
     getPen(label) {
-        this.customPens[label]
+        return this.customPens[label];
     },
 
     // Save custom pens to localstorage

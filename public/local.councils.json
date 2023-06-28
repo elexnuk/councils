@@ -4,6 +4,46 @@
         "name": "UK",
         "boundaries": [
             {
+                "tag": "England", 
+                "year": "2023", 
+                "slug": "england_new_const", 
+                "url": "2023_england_simplified.geojson",
+                "options": {
+                    "key": "Constituen", 
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "Scotland", 
+                "year": "2023", 
+                "slug": "scotland_new_const", 
+                "url": "2023_scotland_simplified.geojson",
+                "options": {
+                    "key": "NAME", 
+                    "name": "NAME"
+                }
+            },
+            {
+                "tag": "Wales", 
+                "year": "2023", 
+                "slug": "wales_new_const", 
+                "url": "2023_wales_simplified.geojson",
+                "options": {
+                    "key": "Constituen", 
+                    "name": "Official_N"
+                }
+            },
+            {
+                "tag": "Constituencies", 
+                "year": "2023", 
+                "slug": "new_const", 
+                "url": "all_const2023.geojson",
+                "options": {
+                    "key": "NAME", 
+                    "name": "NAME"
+                }
+            },
+            {
                 "tag": "Constituencies", 
                 "year": "2010", 
                 "slug": "constituencies", 
@@ -22,6 +62,12 @@
                     "key": "LAD22CD",
                     "name": "LAD22NM"
                 }
+            },
+            {
+                "tag": "Wigan",
+                "year": "2023",
+                "slug": "wigan_new",
+                "url": "wards_Wigan_2023.geojson"
             }
         ]
     }

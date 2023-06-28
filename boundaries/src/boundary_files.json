@@ -1,5 +1,9 @@
 {
     "boundaryFiles": [
+        "2023_england_simplified.geojson",
+        "2023_scotland_simplified.geojson",
+        "2023_wales_simplified.geojson",
+        "all_const2023.geojson",
         "councils_UK.geojson",
         "wards_gb.geojson",
         "constituencies_GB.geojson",

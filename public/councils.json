@@ -4,23 +4,53 @@
         "name": "UK",
         "boundaries": [
             {
-                "tag": "Constituencies", 
+                "tag": "GB", 
+                "year": "2023", 
+                "slug": "new_const", 
+                "url": "all_const2023.geojson",
+                "options": {
+                    "key": "NAME", 
+                    "name": "NAME"
+                }
+            },
+            {
+                "tag": "England", 
+                "year": "2023", 
+                "slug": "england_new_const", 
+                "url": "2023_england_simplified.geojson",
+                "options": {
+                    "key": "Constituen", 
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "Scotland", 
+                "year": "2023", 
+                "slug": "scotland_new_const", 
+                "url": "2023_scotland_simplified.geojson",
+                "options": {
+                    "key": "NAME", 
+                    "name": "NAME"
+                }
+            },
+            {
+                "tag": "Wales", 
+                "year": "2023", 
+                "slug": "wales_new_const", 
+                "url": "2023_wales_simplified.geojson",
+                "options": {
+                    "key": "Constituen", 
+                    "name": "Official_N"
+                }
+            },
+            {
+                "tag": "UK", 
                 "year": "2010", 
                 "slug": "constituencies", 
                 "url": "constituencies_GB.geojson",
                 "options": {
                     "key": "PCON22CD", 
                     "name": "PCON22NM"
-                }
-            },
-            {
-                "tag": "Councils", 
-                "year": "2022", 
-                "slug": "councils", 
-                "url": "councils_UK.geojson", 
-                "options": {
-                    "key": "LAD22CD",
-                    "name": "LAD22NM"
                 }
             }
         ]

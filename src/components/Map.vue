@@ -33,9 +33,11 @@ watch(councils.councilBoundaries, (value) => {
         // Mouseover
         focusWardName.value = feature.properties[options.name];
     }, (e, feature) => {
-        // Mousedown
-        drawState.wardColouring[feature.properties[options.key]] = drawState.pen.fill;
-        e.target.setAttribute("fill", drawState.pen.fill);
+        // Mousedown -- pen needs to be set to colour in.
+        if (drawState.pen.fill) {
+            drawState.wardColouring[feature.properties[options.key]] = drawState.pen.fill;
+            e.target.setAttribute("fill", drawState.pen.fill);
+        }   
     });
 });
 </script>
