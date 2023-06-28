@@ -2,17 +2,27 @@
     "parliament": {
         "slug": "parliament",
         "name": "UK",
-        "boundaries": [
+        "boundaries": [   
             {
-                "tag": "GB", 
+                "tag": "UK", 
                 "year": "2023", 
                 "slug": "new_const", 
-                "url": "all_const2023.geojson",
+                "url": "2023_uk_s.geojson",
                 "options": {
-                    "key": "NAME", 
-                    "name": "NAME"
+                    "key": "Constituen", 
+                    "name": "Constituen"
                 }
             },
+            {
+                "tag": "UK", 
+                "year": "2010", 
+                "slug": "constituencies", 
+                "url": "constituencies_GB.geojson",
+                "options": {
+                    "key": "PCON22CD", 
+                    "name": "PCON22NM"
+                }
+            },         
             {
                 "tag": "England", 
                 "year": "2023", 
@@ -44,13 +54,103 @@
                 }
             },
             {
-                "tag": "UK", 
-                "year": "2010", 
-                "slug": "constituencies", 
-                "url": "constituencies_GB.geojson",
+                "tag": "NI",
+                "year": "2023",
+                "slug": "ni_new",
+                "url": "2023_ni_simplified.json",
                 "options": {
-                    "key": "PCON22CD", 
-                    "name": "PCON22NM"
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "East",
+                "year": "2023",
+                "slug": "east_new",
+                "url": "2023_east_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "East Midlands",
+                "year": "2023",
+                "slug": "east_mids_new",
+                "url": "2023_em_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "London",
+                "year": "2023",
+                "slug": "london_new",
+                "url": "2023_london_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "North East",
+                "year": "2023",
+                "slug": "north_east_new",
+                "url": "2023_ne_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "North West",
+                "year": "2023",
+                "slug": "north_west_new",
+                "url": "2023_nw_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "South East",
+                "year": "2023",
+                "slug": "sout_east_new",
+                "url": "2023_se_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "South West",
+                "year": "2023",
+                "slug": "south_west_new",
+                "url": "2023_sw_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "West Midlands",
+                "year": "2023",
+                "slug": "west_mids_new",
+                "url": "2023_wm_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
+                }
+            },
+            {
+                "tag": "Yorkshire & Humber",
+                "year": "2023",
+                "slug": "yorks_new",
+                "url": "2023_yorks_s.json",
+                "options": {
+                    "key": "Constituen",
+                    "name": "Constituen"
                 }
             }
         ]

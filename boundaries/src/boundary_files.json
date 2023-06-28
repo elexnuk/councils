@@ -1,5 +1,16 @@
 {
     "boundaryFiles": [
+        "2023_uk_s.geojson",
+        "2023_yorks_s.geojson",
+        "2023_wm_s.geojson",
+        "2023_sw_s.geojson",
+        "2023_se_s.geojson",
+        "2023_nw_s.geojson",
+        "2023_ne_s.geojson",
+        "2023_london_s.geojson",
+        "2023_em_s.geojson",
+        "2023_east_s.geojson",
+        "2023_ni_simplified.geojson",
         "2023_england_simplified.geojson",
         "2023_scotland_simplified.geojson",
         "2023_wales_simplified.geojson",
