@@ -5,7 +5,7 @@ const defaultOptions = { key: "wdcd", name: "wdnm" };
 
 export const councils = reactive({
     
-    // key of the current council the app is looking at
+    // key of the current council the app is looking at.
     currentCouncil: {
         name: "",
         boundary: ""
@@ -18,41 +18,58 @@ export const councils = reactive({
     councilBoundaries: shallowReactive({ data: {}, error: false, options: defaultOptions }),
 
     // Load the listing of councils from the data source
-    loadCouncilListing() {
-        getJSON(config.listing_path).then(data => {
+    async loadCouncilListing() {
+        try {
+            let data = await getJSON(config.listing_path);
             this.councilListing = data;
-        }).catch(e => {
-            console.error("Server Error:", e);
+        } catch (err) {
+            console.error("Server Error:", err);
             alert("Error loading listing of council boundary data. Please refresh to try again.")
-        });
+        }
     },
 
     // Load the council boundaries from the data source
-    loadCouncilBoundaries() {
+    async loadCouncilBoundaries() {
         console.log(`Loading Boundaries for ${this.currentCouncil.name} - ${this.currentCouncil.boundary}`);
         if (!this.isCouncilSelected()) {
             throw new Error("Council is not fully selected");
         }
 
         let boundFile = this.getCurrentCouncil().boundaries.find(el => el.slug == this.currentCouncil.boundary);
-        if (!boundFile || !boundFile.url) {
+        if (!boundFile?.url) {
             throw new Error("Council boundary not found");
         }
 
-        getJSON(config.api_base + boundFile.url).then(data => {
+        try {
+            let data = await getJSON(config.api_base + boundFile.url);
             this.councilBoundaries.data = data;
             this.councilBoundaries.error = false;
-        }).catch(e => {
-            console.error("Sever Error:", e);
-            alert(`Server Error Loading Boundaries: ${e}. Perhaps try again later.`)
+        } catch (err) {
+            console.error("Sever Error:", err);
+            alert(`Server Error Loading Boundaries: ${err}. Perhaps try again later.`)
             this.councilBoundaries.error = true;
-        }).finally(() => {
+        } finally {
             if (boundFile.options) {
                 this.councilBoundaries.options = boundFile.options;
             } else {
                 this.councilBoundaries.options = defaultOptions;  
             }
-        });
+        }
+
+        // getJSON(config.api_base + boundFile.url).then(data => {
+        //     this.councilBoundaries.data = data;
+        //     this.councilBoundaries.error = false;
+        // }).catch(e => {
+        //     console.error("Sever Error:", e);
+        //     alert(`Server Error Loading Boundaries: ${e}. Perhaps try again later.`)
+        //     this.councilBoundaries.error = true;
+        // }).finally(() => {
+        //     if (boundFile.options) {
+        //         this.councilBoundaries.options = boundFile.options;
+        //     } else {
+        //         this.councilBoundaries.options = defaultOptions;  
+        //     }
+        // });
     },
 
     isCouncilLoaded() {
@@ -68,9 +85,9 @@ export const councils = reactive({
         this.currentCouncil.boundary = "";
     },
 
-    setCurrentCouncilBoundary(bound) {
+    async setCurrentCouncilBoundary(bound) {
         this.currentCouncil.boundary = bound;
-        this.loadCouncilBoundaries();
+        await this.loadCouncilBoundaries();
     },
 
     // Return the listing object of the current council. Returns undefined for no selection

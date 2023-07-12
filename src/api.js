@@ -24,9 +24,9 @@ function getJSON(url) {
     })
 }
 
-function loadConfig() {
-
-    return getJSON(config_url).then(data => {
+async function loadConfig(cfg = config_url) {
+    try {
+        let data = await getJSON(cfg);
         if (data.boundaryBase) {
             config.api_base = data.boundaryBase;
         } else {
@@ -38,7 +38,9 @@ function loadConfig() {
         } else {
             throw new Error("Config File Missing boundaryListing. Defaulting to \"/councils.json\"");
         }
-    }).catch(console.error);
+    } catch (err) {
+        console.error(err);
+    }
 }
 
-export { config, getJSON, loadConfig };
+export { config_url, config, getJSON, loadConfig };

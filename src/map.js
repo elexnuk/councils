@@ -44,6 +44,14 @@ function loadBoundaries(boundaries, options, mouseover, mousedown) {
             .on("mousedown", mousedown);
 }
 
+function redrawBoundaries(options) {
+    const map = d3.select("svg#d3-svg");
+    const zoomLayer = map.select("g");
+    zoomLayer.selectAll("path").attr("fill", feature => {
+        return drawState.wardColouring[feature.properties[options.key]];
+    });
+}
+
 function downloadSVG() {
     return new Promise((accept, reject) => {
         let svg = document.getElementById("d3-svg");
@@ -127,4 +135,4 @@ function setDPI(canvas, dpi) {
     ctx.scale(scaleFactor, scaleFactor);
 }
 
-export { loadBoundaries, downloadPNG, downloadSVG };
+export { loadBoundaries, downloadPNG, downloadSVG, redrawBoundaries };

@@ -9,6 +9,11 @@ import { computed, onMounted, ref } from 'vue';
 import { drawState } from "../draw";
 import { councils } from "../councils";
 
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+
 let councilsShown = ref(true);
 let pensShown = ref(true);
 
@@ -22,6 +27,10 @@ let councilListing = computed(() => {
     return Object.values(councils.councilListing);
 });
 
+function changeBoundary(slug) {
+    councils.setCurrentCouncilBoundary(slug);
+    router.replace({ name: route.name, params: { boundaryName: slug, councilName: route.params.councilName } });
+}
 </script>
 
 <template>
@@ -56,7 +65,7 @@ let councilListing = computed(() => {
                     v-for="bound in councils.getCurrentCouncil().boundaries" 
                     class="button" 
                     :class="[{ 'active': councils.currentCouncil.boundary == bound.slug }]"
-                    @click="councils.setCurrentCouncilBoundary(bound.slug);"
+                    @click="changeBoundary(bound.slug)"
                 >
                     {{ bound.tag }} ({{ bound.year }})
                 </button>

@@ -2,10 +2,17 @@
 import { onMounted, watch, ref, watchEffect, reactive } from 'vue';
 import { drawState } from '../draw';
 
-import { downloadPNG, downloadSVG, loadBoundaries } from "../map";
+import { downloadPNG, downloadSVG, loadBoundaries, redrawBoundaries } from "../map";
+
+import { storage } from "../storage";
 
 import * as d3 from "d3";
 import { councils } from '../councils';
+
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
 
 function exportPNG() {
     downloadPNG();
@@ -13,6 +20,45 @@ function exportPNG() {
 
 function exportSVG() {
     downloadSVG();
+}
+
+function exportJSON() {
+    try {
+        storage.saveFileToFileSystem(`${councils.currentCouncil.name}-${councils.currentCouncil.boundary}-boundary`);
+    } catch (err) {
+        alert(err);
+    }
+}
+
+function loadFile(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            resolve(reader.result);
+        };
+
+        reader.onerror = reject;
+
+        reader.readAsText(file);
+    });
+}
+
+async function loadJSON(e) {
+    console.log(e);
+    const file = e.target.files[0];
+
+    try {
+        const fileContents = await loadFile(file);
+        await storage.loadFile(fileContents);
+        
+        redrawBoundaries(councils.councilBoundaries.options);
+
+        router.push({ name: route.name, params: { councilName: councils.currentCouncil.name, boundaryName: councils.currentCouncil.boundary } })
+    } catch (error) {
+        alert(error);
+        console.error('Error loading file:', error);
+    }
 }
 
 let focusWardName = ref("");
@@ -39,6 +85,8 @@ watch(councils.councilBoundaries, (value) => {
             e.target.setAttribute("fill", drawState.pen.fill);
         }   
     });
+
+    drawState.councilMeta = { name: councils.currentCouncil.name, boundary: councils.currentCouncil.boundary };
 });
 </script>
 
@@ -50,17 +98,6 @@ watch(councils.councilBoundaries, (value) => {
             <h4 class="md:text-lg lg:text-xl font-thin py-3 align-middle w-full md:w-auto">
                 {{ $props.divisionName }}: <span class=" font-semibold">{{ focusWardName }}</span>   
             </h4>
-
-            <div class="border border-slate-400 pl-2 pr-4 py-2 rounded-lg flex-row inline-flex gap-4 font-light w-full md:w-auto">
-                <span class="pl-2 py-1 self-center">Download Map:</span>
-
-                <button class="button" @click="exportPNG();">
-                    PNG
-                </button>
-                <button class="button" @click="exportSVG();">
-                    SVG
-                </button>
-            </div>
         </div>
         
         <div class=" bg-cyan-950 rounded-lg border-4 border-slate-400 shadow-lg p-2 px-4 w-full max-h-full relative">
@@ -71,6 +108,32 @@ watch(councils.councilBoundaries, (value) => {
             
             <svg xmlns="http://www.w3.org/2000/svg" id="d3-svg">
             </svg>
+        </div>
+
+        <div class="flex flex-row flex-wrap md:flex-nowrap justify-between w-full p-2 px-4 rounded-md text-lg">
+            <div class="border border-slate-400 pl-2 pr-4 py-2 rounded-lg flex-row inline-flex gap-4 font-light w-full md:w-auto">
+                <span class="pl-2 py-1 self-center">Load Map:</span>
+
+                <label class="button cursor-pointer">
+                    JSON
+                    <input style="display: none;" type="file" @change="e => loadJSON(e)">
+                </label>
+            </div>
+
+            <div class="border border-slate-400 pl-2 pr-4 py-2 rounded-lg flex-row inline-flex gap-4 font-light w-full md:w-auto">
+                <span class="pl-2 py-1 self-center">Save Map:</span>
+
+                <button class="button" @click="exportJSON();">
+                    JSON
+                </button>
+                <button class="button" @click="exportPNG();">
+                    PNG
+                </button>
+                <button class="button" @click="exportSVG();">
+                    SVG
+                </button>
+                
+            </div>
         </div>
     </div>
 

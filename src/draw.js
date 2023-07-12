@@ -8,6 +8,12 @@ export const drawState = reactive({
     // Map the ward identifier to the colouring
     wardColouring: {},
 
+    // Meta information about boundaries
+    councilMeta: {
+        name: "",
+        boundary: ""
+    },
+
     // Current Pen
     pen: {},
 
@@ -29,6 +35,14 @@ export const drawState = reactive({
         "Oth": {"label": "Oth",  "fill": "#475569"}
     },
 
+    getWardColouring() {
+        return this.wardColouring;
+    },
+
+    getCouncilMeta() {
+        return this.councilMeta;
+    }, 
+
     clearPen() {
         this.pen = {};
     },
@@ -44,6 +58,11 @@ export const drawState = reactive({
 
     // Add a new pen to the custom pens
     addPen(label, fill) {
+        let suffix = 1;
+        while (this.customPens[label]) {
+            label = `${label}${suffix}`;
+            suffix++;
+        }
         this.customPens[label] = { label, fill };
         this.savePens();
     },

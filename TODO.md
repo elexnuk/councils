@@ -2,10 +2,8 @@ TODOs
 ====
 
 1. Multi-seat with custom hatching fills implementation
-2. UI navigation and deep-links switching between councils
-3. Improved transitions, etc. Touch up styling.
-4. Extensions such as generating circle charts
-5. import/export functionality
+2. Improved transitions, etc. Touch up styling.
+3. Extensions such as generating circle charts
 
 Done
 ====
@@ -15,7 +13,8 @@ Done
 3. Map components -- DONE
 4. Logical implementation of painting -- DONE
 5. Download buttons -- DONE
-
+6. UI navigation and deep-links switching between councils -- DONE
+7. import/export functionality -- DONE
 
 Ideas
 =====
@@ -32,3 +31,11 @@ golden!
 
 by using a pattern and matched url to fill a square we can also easily tell what it's filled with
 and can then cascade an update of colour or deletion
+
+
+SPA URL/Routing
+====
+
+/{group slug}/{boundary slug}/ - load as group + boundary file
+
+if no boundary slug - load single one as default, or display list to choose from

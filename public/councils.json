@@ -6,7 +6,7 @@
             {
                 "tag": "UK", 
                 "year": "2023", 
-                "slug": "new_const", 
+                "slug": "2023", 
                 "url": "2023_uk_s.geojson",
                 "options": {
                     "key": "Constituen", 
@@ -16,7 +16,7 @@
             {
                 "tag": "UK", 
                 "year": "2010", 
-                "slug": "constituencies", 
+                "slug": "2010", 
                 "url": "constituencies_GB.geojson",
                 "options": {
                     "key": "PCON22CD", 
@@ -26,7 +26,7 @@
             {
                 "tag": "England", 
                 "year": "2023", 
-                "slug": "england_new_const", 
+                "slug": "eng-2023", 
                 "url": "2023_england_simplified.geojson",
                 "options": {
                     "key": "Constituen", 
@@ -36,7 +36,7 @@
             {
                 "tag": "Scotland", 
                 "year": "2023", 
-                "slug": "scotland_new_const", 
+                "slug": "scot-2023", 
                 "url": "2023_scotland_simplified.geojson",
                 "options": {
                     "key": "NAME", 
@@ -46,7 +46,7 @@
             {
                 "tag": "Wales", 
                 "year": "2023", 
-                "slug": "wales_new_const", 
+                "slug": "wales-2023", 
                 "url": "2023_wales_simplified.geojson",
                 "options": {
                     "key": "Constituen", 
@@ -56,7 +56,7 @@
             {
                 "tag": "NI",
                 "year": "2023",
-                "slug": "ni_new",
+                "slug": "ni-2023",
                 "url": "2023_ni_simplified.geojson",
                 "options": {
                     "key": "Constituen",
@@ -66,7 +66,7 @@
             {
                 "tag": "East",
                 "year": "2023",
-                "slug": "east_new",
+                "slug": "east-2023",
                 "url": "2023_east_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -76,7 +76,7 @@
             {
                 "tag": "East Midlands",
                 "year": "2023",
-                "slug": "east_mids_new",
+                "slug": "em-2023",
                 "url": "2023_em_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -86,7 +86,7 @@
             {
                 "tag": "London",
                 "year": "2023",
-                "slug": "london_new",
+                "slug": "lon-2023",
                 "url": "2023_london_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -96,7 +96,7 @@
             {
                 "tag": "North East",
                 "year": "2023",
-                "slug": "north_east_new",
+                "slug": "ne-2023",
                 "url": "2023_ne_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -106,7 +106,7 @@
             {
                 "tag": "North West",
                 "year": "2023",
-                "slug": "north_west_new",
+                "slug": "nw-2023",
                 "url": "2023_nw_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -116,7 +116,7 @@
             {
                 "tag": "South East",
                 "year": "2023",
-                "slug": "sout_east_new",
+                "slug": "se-2023",
                 "url": "2023_se_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -126,7 +126,7 @@
             {
                 "tag": "South West",
                 "year": "2023",
-                "slug": "south_west_new",
+                "slug": "sw-2023",
                 "url": "2023_sw_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -136,7 +136,7 @@
             {
                 "tag": "West Midlands",
                 "year": "2023",
-                "slug": "west_mids_new",
+                "slug": "wm-2023",
                 "url": "2023_wm_s.geojson",
                 "options": {
                     "key": "Constituen",
@@ -146,7 +146,7 @@
             {
                 "tag": "Yorkshire & Humber",
                 "year": "2023",
-                "slug": "yorks_new",
+                "slug": "yorks-2023",
                 "url": "2023_yorks_s.geojson",
                 "options": {
                     "key": "Constituen",

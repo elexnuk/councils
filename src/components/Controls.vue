@@ -9,6 +9,11 @@ import { computed, onMounted, ref } from 'vue';
 import { drawState } from "../draw";
 import { councils } from "../councils";
 
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+
 let councilsShown = ref(true);
 let pensShown = ref(true);
 
@@ -22,6 +27,15 @@ let councilListing = computed(() => {
     return Object.values(councils.councilListing);
 });
 
+function changeCouncil(slug) {
+    councils.setCurrentCouncilName(slug);
+    router.replace({ name: route.name, params: { boundaryName: "", councilName: slug }})
+}
+
+function changeBoundary(slug) {
+    councils.setCurrentCouncilBoundary(slug);
+    router.replace({ name: route.name, params: { boundaryName: slug, councilName: route.params.councilName } });
+}
 </script>
 
 <template>
@@ -46,7 +60,7 @@ let councilListing = computed(() => {
 
         <Transition name="collapse">
             <div v-show="councilsShown" class="flex flex-row flex-wrap gap-2 justify-start mt-4">
-                <Combobox placeholder="Search for Council..." :values="councilListing" @input="event => councils.setCurrentCouncilName(event.slug)"></Combobox>
+                <Combobox placeholder="Search for Council..." :values="councilListing" @input="event => changeCouncil(event.slug)"></Combobox>
                 <div v-if="councils.getCurrentCouncil()"
                 class="w-full italic text-sm text-gray-800"
                 >
@@ -57,7 +71,7 @@ let councilListing = computed(() => {
                     v-for="bound in councils.getCurrentCouncil().boundaries" 
                     class="button" 
                     :class="[{ 'active': councils.currentCouncil.boundary == bound.slug }]"
-                    @click="councils.setCurrentCouncilBoundary(bound.slug);"
+                    @click="changeBoundary(bound.slug)"
                 >
                     {{ bound.tag }} ({{ bound.year }})
                 </button>
