@@ -1,5 +1,6 @@
 {
     "boundaryFiles": [
+		"PoliceForceAreas.geojson",
         "2023_uk_s.geojson",
         "2023_yorks_s.geojson",
         "2023_wm_s.geojson",
