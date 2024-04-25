@@ -1,5 +1,7 @@
 {
     "boundaryFiles": [
+		"scotland_prop.json",
+		"scotland_fptp.json",
 		"PoliceForceAreas.geojson",
         "2023_uk_s.geojson",
         "2023_yorks_s.geojson",
