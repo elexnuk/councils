@@ -1,5 +1,6 @@
 {
     "boundaryFiles": [
+		"GLAConst.geojson",
 		"scotland_prop.json",
 		"scotland_fptp.json",
 		"PoliceForceAreas.geojson",
