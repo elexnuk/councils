@@ -1,5 +1,7 @@
 {
     "boundaryFiles": [
+		"LAD23_Full.json",
+		"LAD23_London.json",
 		"GLAConst.geojson",
 		"scotland_prop.json",
 		"scotland_fptp.json",

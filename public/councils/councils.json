@@ -11,8 +11,18 @@
 			},
 			{
 				"tag": "Councils",
-				"year": "2022",
+				"year": "2023",
 				"slug": "councils",
+				"url": "LAD23_Full.json",
+				"options": {
+					"key": "LAD23CD",
+					"name": "LAD23NM"
+				}
+			},
+			{
+				"tag": "Councils",
+				"year": "2022",
+				"slug": "old-councils",
 				"url": "councils_UK.geojson",
 				"options": {
 					"key": "LAD22CD",
@@ -21,7 +31,7 @@
 			},
 			{
 				"tag": "Police Force Area",
-				"year": "2024",
+				"year": "2022",
 				"slug": "pcc",
 				"url": "PoliceForceAreas.geojson",
 				"options": {
@@ -4529,6 +4539,15 @@
 		"name": "London",
 		"slug": "gla",
 		"boundaries": [
+			{
+				"tag": "Boroughs",
+				"year": "2023",
+				"url": "LAD23_London.json",
+				"options": {
+					"key": "LAD23CD",
+					"name": "LAD23NM"
+				}
+			},
 			{
 				"tag": "Constituencies",
 				"year": "2002",
