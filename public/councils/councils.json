@@ -4525,7 +4525,7 @@
 			}
 		]
 	},
-	"london": {
+	"gla": {
 		"name": "London",
 		"slug": "gla",
 		"boundaries": [
@@ -4533,11 +4533,7 @@
 				"tag": "Constituencies",
 				"year": "2002",
 				"slug": "const",
-				"url": "GLAConst.geojson",
-				"options": {
-					"key": "GLA22CD",
-					"name": "GLA22NM"
-				}
+				"url": "GLAConst.geojson"
 			}
 		]
 	},
