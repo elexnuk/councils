@@ -4533,7 +4533,11 @@
 				"tag": "Constituencies",
 				"year": "2002",
 				"slug": "const",
-				"url": "GLAConst.geojson"
+				"url": "GLAConst.geojson",
+				"options": {
+					"key": "CODE", 
+					"name": "NAME"
+				}
 			}
 		]
 	},
