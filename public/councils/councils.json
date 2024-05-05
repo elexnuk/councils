@@ -4542,6 +4542,7 @@
 			{
 				"tag": "Boroughs",
 				"year": "2023",
+				"slug": "boroughs",
 				"url": "LAD23_London.json",
 				"options": {
 					"key": "LAD23CD",
