@@ -4586,5 +4586,17 @@
 				}
 			}
 		]
-	}
+	},
+	"oxfordshire": {
+		"name": "Oxfordshire CC",
+		"slug": "oxfordshire",
+		"boundaries": [
+			{
+				"tag": "Division",
+				"year": "2025",
+				"slug": "latest",
+				"url": "./oxfordshire_cc.json"
+			}
+		]
+	},
 }
