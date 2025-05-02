@@ -1,6 +1,6 @@
 {
     "boundaryFiles": [
-		"oxfordshire_cc.json",
+		"oxfordshire_cc.geojson",
 		"LAD23_Full.json",
 		"LAD23_London.json",
 		"GLAConst.geojson",

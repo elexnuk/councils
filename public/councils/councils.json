@@ -4595,7 +4595,7 @@
 				"tag": "Division",
 				"year": "2025",
 				"slug": "latest",
-				"url": "./oxfordshire_cc.json"
+				"url": "./oxfordshire_cc.geojson"
 			}
 		]
 	}
